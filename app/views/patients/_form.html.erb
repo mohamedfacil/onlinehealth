@@ -1,0 +1,76 @@
+
+
+
+
+<%= form_with model: patient do |form| %>
+</br>
+   <div class="field form-group">
+    
+    <%= form.text_field :patient_name  ,class:"form-control",placeholder:"patient name"%>
+    <% patient.errors.full_messages_for(:patient_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+</br>
+  <div class="field form-group">
+   
+    <%= form.text_field :address, class:"form-control" , placeholder:"address"%>
+    <% patient.errors.full_messages_for(:address).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+</br>
+  <div class="field form-group">
+    
+    <%= form.text_field :email, class:"form-control", placeholder:"Email" %>
+    <% patient.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+</br>
+<div class="row">
+<div class="col-md-6">
+    <%= form.label :dob %>
+    <%= form.date_field :dob %>
+  </div>
+
+  <div class="col-md-6">
+    Gender&nbsp;
+    <%= form.radio_button :gender, 'Male' %> Male
+    <%= form.radio_button :gender, 'Female' %> Female
+  </div>
+  </div>
+  </br>
+
+<div class="row">
+  <div class="col-md-6">
+
+    <%= form.password_field :password, class:"form-control", placeholder:"password" %>
+    <% patient.errors.full_messages_for(:password).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="col-md-6 ">
+ 
+    <%= form.password_field :password_confirmation , class:"form-control", placeholder:"password confirmation"%>
+    <% patient.errors.full_messages_for(:password_confirmation).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  </div>
+  </br>
+  <div class="field form-group">
+   
+    <%= form.text_field :phone,  class:"form-control",placeholder:"phone"%>
+    <% patient.errors.full_messages_for(:phone).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+</br>
+  <div class="actions text-center">
+    <%= form.submit nil, class: 'btn btn-success' %>
+     <%= link_to 'Back', patients_path ,class:"btn btn-primary "%>
+  </div>
+ 
+<% end %>

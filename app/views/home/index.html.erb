@@ -1,0 +1,47 @@
+<br>
+
+
+
+<% if !@patient && !@doctor && !@hospital %>
+        <%= link_to 'Hospital Registration', hospitals_path ,class:"btn btn-primary "%>
+
+        &nbsp;
+
+        <%= link_to 'Patient Registration',  {:controller => :patients, :action => :index} ,class:"btn btn-primary "%>
+        &nbsp;
+
+        <h2 class="content-subhead">Get Access</h2>
+        <p>
+            You can login as Hospital by <%= link_to "Clicking Here", {:controller => :hospitals, :action => :login}, { class: 'btn btn-primary'} %>.
+            <br/>
+            <br/>
+            You can login as Doctor by <%= link_to "Clicking Here", {:controller => :doctors, :action => :login}, { class: 'btn btn-primary'} %>.
+            <br/>
+            <br/>
+            You can login as Patient by <%= link_to "Clicking Here", {:controller => :patients, :action => :login}, { class: 'btn btn-primary'} %>.
+            
+            <br/>
+            <code>Have a good day!</code>
+        </p>
+        <% end %>
+        <% if @hospital %>
+          <h2 class="content-subhead">You have logged in as <%= @hospital.hospital_name %> <%= link_to "Logout", {:controller => :hospitals, :action => :logout}, { class: 'pure-button  button-secondary'} %> </h2>
+          <p>
+            Welcome Hospital: &nbsp;<%= @hospital.hospital_name %> Hospital
+            You will have the context of the logged in Hospital in viewing all the Hospital related views. Please logout in case you are facing some issues. Have a good health!
+          </p>
+        <% end %>
+        <% if @doctor %>
+          <h2 class="content-subhead">You have logged in as Doctor  <%= link_to "Logout", {:controller => :doctors, :action => :logout}, { class: 'pure-button  button-secondary'} %></h2>
+          <p>
+            Welcome Doctor: <%= @doctor.doctor_name %>&nbsp;<%= @doctor.email %>
+            You will have the context of the logged in doctor in viewing all the doctor related views. Please logout in case you are facing some issues. Have a good health!
+          </p>
+        <% end %>
+        <% if @patient %>
+          <h2 class="content-subhead">You have logged in as <%= @patient.patient_name %>  <%= link_to "Logout", {:controller => :patients, :action => :logout}, { class: 'pure-button  button-secondary'} %></h2>
+          <p>
+            Welcome : &nbsp;<%= @patient.email %>
+            You will have the context of the logged in Patient in viewing all the Patient related views. Please logout in case you are facing some issues. Have a good health!
+          </p>
+        <% end %>

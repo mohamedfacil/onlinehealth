@@ -1,0 +1,10 @@
+<h1 class = "text-light text-center bg-dark"><%= @hospital.hospital_name %> </h1>
+
+<div class="doctor_page">
+<%= link_to "Display Doctors", hospital_doctors_path(@hospital),class:"btn btn-primary btn-lg justify-right" %>
+</div>
+<br>
+<%# <%= link_to "Add Doctors", new_hospital_doctor_path(@hospital),class:"btn btn-secondary btn-sm" %> 
+
+<h2 class = "text-light text-center bg-secondary">Add Doctor</h2>
+<%= render 'doctors/form' %>
