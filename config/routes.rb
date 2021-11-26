@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     get 'doctors/logout'
     get 'doctors/doctordiagnosis'
     get 'patients/prescription'
+    get 'patients/previousrecords'
+    get 'doctors/previousrecords'
 
   resources :patients do
     get 'login', :on => :collection

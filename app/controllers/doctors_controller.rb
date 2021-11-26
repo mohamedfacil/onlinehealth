@@ -38,6 +38,12 @@ class DoctorsController < ApplicationController
       @doctorappoints = Doctorappoint.where(doctor_id: session[:doctor_id])
       # @patient = Patient.find_by(id: @doctorappoint.patient_id)
     end
+
+    def previousrecords
+      @doctor = Doctor.find(session[:doctor_id])
+      @previousrecords = Previousrecord.where(doctor_id: session[:doctor_id])
+      
+    end
     
     def index
         @doctors =  Doctor.where(hospital_id: params[:hospital_id])

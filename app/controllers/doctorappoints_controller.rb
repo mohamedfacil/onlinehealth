@@ -13,6 +13,12 @@ class DoctorappointsController < ApplicationController
             render 'index'
             end
     end
+    def destroy
+        @doctorappoint = Doctorappoint.find(params[:id])
+        @doctorappoint.destroy
+    
+        redirect_to root_path
+    end
     # notes:params[:notes],doctor_id:params[:doctor_id],patient_id:params[:patient_id]
     private
     def doctorappoint_params

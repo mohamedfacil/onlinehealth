@@ -6,7 +6,8 @@ class PatientsController < ApplicationController
 
   def show
     @patient = Patient.find(params[:id])
-    @doctors =  Doctor.all
+    @q = Doctor.ransack(params[:q])
+    @doctors =  @q.result(distinct: true)
   end
 
   def new
@@ -36,6 +37,12 @@ class PatientsController < ApplicationController
   def prescription
     @patient = Patient.find(session[:patient_id])
     @prescriptions = Prescription.where(patient_id: session[:patient_id])
+  end
+
+  def previousrecords
+    @patient = Patient.find(session[:patient_id])
+    @previousrecords = Previousrecord.where(patient_id: session[:patient_id])
+    
   end
 
   def create

@@ -18,6 +18,14 @@
     <%= form.hidden_field :doctorName, :value => @doctor.doctor_name %>
 </div> 
 <div class="mb-3">
+
+    <%= form.hidden_field :patient_name, :value => @patient.patient_name %>
+</div> 
+<div class="mb-3">
+
+    <%= form.hidden_field :symptoms, :value =>@doctorappoint.notes %>
+</div> 
+<div class="mb-3">
     <%= form.label :notes %>
     <%= form.text_field :notes, class:"form-control", placeholder:"Write the prescription"%>
 </div>    

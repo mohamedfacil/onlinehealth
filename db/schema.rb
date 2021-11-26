@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_25_144041) do
+ActiveRecord::Schema.define(version: 2021_11_26_133549) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -101,11 +101,14 @@ ActiveRecord::Schema.define(version: 2021_11_25_144041) do
   end
 
   create_table "previousrecords", force: :cascade do |t|
-    t.string "previous_records"
     t.integer "patient_id", null: false
     t.integer "doctor_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "patient_name"
+    t.string "doctorName"
+    t.string "symptoms"
+    t.string "notes"
     t.index ["doctor_id"], name: "index_previousrecords_on_doctor_id"
     t.index ["patient_id"], name: "index_previousrecords_on_patient_id"
   end
