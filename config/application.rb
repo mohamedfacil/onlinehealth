@@ -6,6 +6,12 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# initializer(:remove_action_mailbox_and_activestorage_routes, after: :add_routing_paths) { |app|
+#   app.routes_reloader.paths.delete_if {|path| path =~ /activestorage/}
+#   app.routes_reloader.paths.delete_if {|path| path =~ /actionmailbox/ }
+# }
+# config.serve_static_assets = true
+
 module Onlinehealth
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.

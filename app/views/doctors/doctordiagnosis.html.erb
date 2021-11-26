@@ -1,0 +1,27 @@
+<h1>hello doctor: <%= @doctor.doctor_name%></h1>
+<%# <h1>Your Patient <%= @patient.patient_name%></h1> 
+
+<table class="table table-striped table-hover table-bordered table-sm">
+  <thead class="table-dark">
+    <tr>
+      
+      <th>patient_name</th>
+      <th>symptoms</th>
+      <th>Prescription</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+ <% @doctorappoints.each do |doctorappoint| %> 
+      <tr>
+        
+        <td><%= doctorappoint.patientName %></td>
+        <td><%= doctorappoint.notes %></td>
+        <td><%= link_to 'Write prescription', prescriptions_path(:patient_id => doctorappoint.patient_id) ,class:"btn btn-primary btn-sm" %></td>
+      
+
+      </tr>
+  <% end %> 
+  </tbody>
+</table>

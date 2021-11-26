@@ -8,6 +8,8 @@
   </div>
 </nav>
 <br>
+<td><%= link_to 'Prescription', patients_prescription_path  ,class:"btn btn-primary" %></td>
+<br>
 <h1 class = "text-dark text-center bg-light">Doctor List </h1>
 
  <table class="table table-striped table-hover table-bordered table-sm">
@@ -21,6 +23,7 @@
       <th>Gender</th>
       <th>Email</th>
       <th>Phone</th>
+      <th>Appoint</th>
     </tr>
   </thead>
 
@@ -35,6 +38,7 @@
         <td><%= doctor.gender %></td>
         <td><%= doctor.email %></td>
         <td><%= doctor.phone %></td>
+        <td><%= link_to 'Symptoms', doctorappoints_path(:doctor_id => doctor.id) ,class:"btn btn-primary btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>

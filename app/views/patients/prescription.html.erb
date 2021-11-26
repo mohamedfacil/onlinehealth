@@ -1,0 +1,33 @@
+<h1>hello patient: <%= @patient.patient_name%></h1>
+<%# <h1>Your Patient <%= @patient.patient_name%></h1> 
+
+<table class="table table-striped table-hover table-bordered table-sm">
+  <thead class="table-dark">
+    <tr>
+      
+        <th>Doctor id</th>
+        <th>PatientName</th>
+        <th>Notes</th>   
+        <th>Prescription</th>   
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+       <% @prescriptions.each do |prescription| %> 
+      <tr>
+        
+        <td><%= prescription.doctorName %></td>
+        <td><%= @patient.patient_name%></td>
+        <td><%= prescription.notes %></td>
+        <%# <td><%= image_tag(prescription.image,style:'width:10%')%>
+        <%# <td><%= link_to 'Download',prescription.image,download:''%>
+        <td><%= link_to 'View Prescription',prescription.image,class:"btn btn-primary btn-sm"%></td> 
+      
+
+      </tr>
+  <% end %>
+  
+  </tbody>
+</table>

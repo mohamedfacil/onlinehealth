@@ -33,6 +33,11 @@ class PatientsController < ApplicationController
        end
   end
   
+  def prescription
+    @patient = Patient.find(session[:patient_id])
+    @prescriptions = Prescription.where(patient_id: session[:patient_id])
+  end
+
   def create
     @patient = Patient.new(patient_params)
     if @patient.save

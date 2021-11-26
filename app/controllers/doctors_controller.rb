@@ -35,6 +35,8 @@ class DoctorsController < ApplicationController
     
     def doctordiagnosis
       @doctor = Doctor.find(session[:doctor_id])
+      @doctorappoints = Doctorappoint.where(doctor_id: session[:doctor_id])
+      # @patient = Patient.find_by(id: @doctorappoint.patient_id)
     end
     
     def index

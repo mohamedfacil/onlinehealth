@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
  
  
-  resources :sessions 
+  resources :doctorappoints
+  resources :prescriptions
   root "home#index"
 
   resources :hospitals do
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
     post 'doctors/signin'
     get 'doctors/logout'
     get 'doctors/doctordiagnosis'
+    get 'patients/prescription'
 
   resources :patients do
     get 'login', :on => :collection
