@@ -5,6 +5,8 @@ Rails.application.routes.draw do
  
  
   resources :doctorappoints
+  resources :doctorseeks
+  resources :patienttells
   resources :prescriptions
   root "home#index"
 
@@ -22,7 +24,9 @@ Rails.application.routes.draw do
     get 'doctors/doctordiagnosis'
     get 'patients/prescription'
     get 'patients/previousrecords'
+    get 'patients/doctorseeks'
     get 'doctors/previousrecords'
+    get 'prescriptions/patienttells'
 
   resources :patients do
     get 'login', :on => :collection

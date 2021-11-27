@@ -1,7 +1,7 @@
 <h1>Give Prescription</h1>
 <h1 class = "text-dark text-center bg-light" >Doctor Name:<%= @doctor.doctor_name %> </h1>
 <h1 class = "text-dark text-center bg-light" >Patient Name:<%= @patient.patient_name %></h1> 
-
+<td><%= link_to 'View More Details', prescriptions_patienttells_path(:doctorappoint_id => @doctorappoint.id),class:"btn btn-primary btn-sm"%></td>
 
 <%= form_with url: prescriptions_path do |form| %>
  

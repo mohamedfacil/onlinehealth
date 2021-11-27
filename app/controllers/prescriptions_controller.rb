@@ -17,13 +17,20 @@ class PrescriptionsController < ApplicationController
             render 'index'
             end
     end
+   
+    def show
+      @doctor =  Doctor.find(session[:doctor_id])
+      @patienttells = Patienttell.where(doctorappoint_id: params[:doctorappoint_id])
+    end
+
+   
 
     def destroy
       @prescription = Prescription.find(params[:id])
-      @prescription.destroy
+      @prescription.destroy 
   
       redirect_to patients_prescription_path
-  end
+    end
     # notes:params[:notes],doctor_id:params[:doctor_id],patient_id:params[:patient_id]
     private
     def prescription_params

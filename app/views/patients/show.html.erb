@@ -11,6 +11,7 @@
 <%= link_to 'Prescription', patients_prescription_path  ,class:"btn btn-primary" %>&nbsp;
 <%= link_to 'PreviousRecords', patients_previousrecords_path  ,class:"btn btn-primary" %>&nbsp;
 <%= link_to 'Edit profile', edit_patient_path(@patient.id)  ,class:"btn btn-primary" %>
+<%= link_to 'Doctor seek Details', patients_doctorseeks_path  ,class:"btn btn-primary" %>
 <br>
 <%= render 'patients/search_form.html.erb'%>
 <h1 class = "text-dark text-center bg-light">Doctor List </h1>

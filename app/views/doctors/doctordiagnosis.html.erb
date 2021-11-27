@@ -8,6 +8,7 @@
       
       <th>patient_name</th>
       <th>symptoms</th>
+      <th>seek details</th>
       <th>Prescription</th>
       <th>Delete</th>
 
@@ -20,6 +21,7 @@
         
         <td><%= doctorappoint.patientName %></td>
         <td><%= doctorappoint.notes %></td>
+        <td><%= link_to 'Ask more', doctorseeks_path(:patient_id => doctorappoint.patient_id,:doctorappoint_id => doctorappoint.id) ,class:"btn btn-primary btn-sm" %></td>
         <td><%= link_to 'Write prescription', prescriptions_path(:patient_id => doctorappoint.patient_id,:doctorappoint_id => doctorappoint.id) ,class:"btn btn-primary btn-sm" %></td>
         <td><%= link_to 'Remove Record', doctorappoint, method: :delete, data: { confirm: 'Are you sure?' } ,class:"btn btn-danger btn-sm"%></td>
 

@@ -38,6 +38,10 @@ class PatientsController < ApplicationController
     @patient = Patient.find(session[:patient_id])
     @prescriptions = Prescription.where(patient_id: session[:patient_id])
   end
+  def doctorseeks
+    @patient = Patient.find(session[:patient_id])
+    @doctorseeks = Doctorseek.where(patient_id: session[:patient_id])
+  end
 
   def previousrecords
     @patient = Patient.find(session[:patient_id])
