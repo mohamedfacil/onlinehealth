@@ -1,6 +1,7 @@
 <h1 class = "text-light text-center bg-dark"><%= @hospital.hospital_name %> </h1>
 
 <div class="doctor_page">
+<%= link_to "Edit hospital profile", edit_hospital_path(@hospital),class:"btn btn-primary btn-lg justify-right" %>
 <%= link_to "Display Doctors", hospital_doctors_path(@hospital),class:"btn btn-primary btn-lg justify-right" %>
 </div>
 <br>

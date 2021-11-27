@@ -5,9 +5,10 @@ class DoctorappointsController < ApplicationController
     end
     def create
         @doctorappoint = Doctorappoint.new(doctorappoint_params)
+        @patient = Patient.find(session[:patient_id])
             if @doctorappoint.save
                 flash[:success] = "/doctor appoint successfully created"
-                redirect_to root_path
+                redirect_to @patient
             else
             flash[:error] = "Something went wrong"
             render 'index'
@@ -17,7 +18,7 @@ class DoctorappointsController < ApplicationController
         @doctorappoint = Doctorappoint.find(params[:id])
         @doctorappoint.destroy
     
-        redirect_to root_path
+        redirect_to doctors_doctordiagnosis_path
     end
     # notes:params[:notes],doctor_id:params[:doctor_id],patient_id:params[:patient_id]
     private

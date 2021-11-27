@@ -4,7 +4,7 @@ class DoctorsController < ApplicationController
         @doctor = @hospital.doctors.create(doctor_params)
         redirect_to hospital_path(@hospital)
       end
-    def show
+    def edit
       
     end  
 
@@ -51,7 +51,7 @@ class DoctorsController < ApplicationController
     end
       private
         def doctor_params
-          params.require(:doctor).permit(:doctor_name, :address, :department, :qualification, :dob, :gender, :email, :password, :password_confirmation, :phone)
+          params.require(:doctor).permit(:doctor_name, :address, :department, :qualification,:hospital_name, :dob, :gender, :email, :password, :password_confirmation, :phone)
         end
         def set_doctor
     

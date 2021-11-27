@@ -10,7 +10,7 @@ class PrescriptionsController < ApplicationController
             if @prescription.save
                 if @previous_record.save 
                 flash[:success] = "/doctor appoint successfully created"
-                redirect_to root_path
+                redirect_to doctors_doctordiagnosis_path
                 end
             else
             flash[:error] = "Something went wrong"
